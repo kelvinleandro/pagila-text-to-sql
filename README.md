@@ -19,3 +19,7 @@ docker exec -it pagila-db psql -U postgres -d pagila
 ```bash
 docker exec -it pagila-db psql -U llm_user -d pagila
 ```
+
+```bash
+docker compose up --build
+```

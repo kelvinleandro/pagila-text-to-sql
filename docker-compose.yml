@@ -32,5 +32,17 @@ services:
       db:
         condition: service_healthy
 
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend.Dockerfile
+    container_name: chat-frontend
+    ports:
+      - "8501:8501"
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - backend
+
 volumes:
   pgdata:
